@@ -15,6 +15,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
+</head>
+
+<body>
+    <div class="container">
+        <form id="distance_form" action="" method="">
+            <!-- <div>
+                <input class="">
+            </div> -->
+            <div class="user-box">
+                <input id="from_places" type="text" placeholder="Enter Origin">
+                <input id="origin" type="hidden" name="origin" required/>
+            </div>
+            <div class="user-box">
+                <input id="to_places" type="text" placeholder="Enter Destination">
+                <input id="destination" type="hidden" name="destination" required/>
+            </div>
+            <input id="submit" type="submit" value="<?= $lang['calculate_btn']?>"/>
+        </form>
+    </div>
+</body>
     <!-- google autocomplete api starts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyAFAsCFDvRgPZz-P9XHg-AmeZ1JDDB_9Bc" type="text/javascript"></script>
@@ -31,22 +51,4 @@
     });
     </script>
     <!-- booking function ends -->
-</head>
-
-<body>
-    <div class="container">
-        <form id="distance_form" action="" method="">
-            <div class="user-box">
-                <input id="from_places" type="text" placeholder="Enter Origin">
-                <input id="origin" type="hidden" name="origin" required/>
-            </div>
-            <div class="user-box">
-                <input id="to_places" type="text" placeholder="Enter Destination">
-                <input id="destination" type="hidden" name="destination" required/>
-            </div>
-            <input id="submit" type="submit" value="Search">
-        </form>
-    </div>
-</body>
-
 </html>
