@@ -20,7 +20,7 @@
 <body>
     <div class="container">
         <form id="distance_form" action="" method="">
-            <!-- <div class="user-box">
+            <!-- <div class="user-box" >
                 <input class="for-control" id="username" placeholder="Enter Name">
             </div> -->
             <div class="user-box">
