@@ -42,7 +42,9 @@
     <!-- result -->
     <div class="container">
         <div id="result" class="hide">
-
+            <ul>
+               <li id="in_mile"></li> 
+            </ul>
         </div>
     </div>
 </body>
@@ -108,7 +110,16 @@
     };
 
     // append the result
-    // function appendResults(distance_in_kilo, distance_in_mile, duration_text, taxi_fare){
+    function appendResults(distance_in_kilo, distance_in_mile, duration_text, taxi_fare){
+        $("#result").removeClass("hide");
+        $('#in_kilo').html(distance_in_kilo.toFixed(2));
+        $('#in_mile').text(distance_in_mile.toFixed(2));
+        $('#duration_text').html(duration_text);
+        $('#taxi_price').html(new Intl.NumberFormat('en-NG',{style:'currency', currency:'GBP'}).format(taxi_fare.toFixed(2)));
+    };
+
+    // send ajax request to save results in db
+    // function sendAjaxRequest(){
 
     // };
 
