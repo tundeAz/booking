@@ -20,8 +20,8 @@
 <body>
     <div class="container">
         <form id="distance_form" action="" method="">
-            <!-- <div>
-                <input class="">
+            <!-- <div class="user-box">
+                <input class="for-control" id="username" placeholder="Enter Name">
             </div> -->
             <div class="user-box">
                 <input id="from_places" type="text" placeholder="Enter Origin">
@@ -31,7 +31,8 @@
                 <input id="to_places" type="text" placeholder="Enter Destination">
                 <input id="destination" type="hidden" name="destination" required/>
             </div>
-            <input id="submit" type="submit" value="<?= $lang['calculate_btn']?>"/>
+            
+            <input id="submit" type="submit" value="search"/>
         </form>
     </div>
 </body>
