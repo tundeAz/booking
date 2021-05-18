@@ -9,7 +9,7 @@ $dbHost = 'localhost';
 $dbUser = 'root';
 $dbPass = '';
 $dbName = 'booking';
-date_default_timezone_set("Euroupe");
+date_default_timezone_set("Europe/London");
 
 require_once 'connect.php';
 
