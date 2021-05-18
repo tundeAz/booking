@@ -84,8 +84,33 @@
             // unitSystem: google.maps.unitSystem.metric, //kilometer & meters.
             avoidHighways: false,
             avoidTolls: false
-        }, save_result);
-    }
+        }, save_results);
+    };
+
+    // get/save distance result
+    function save_results(response, status){
+        if (status != google.maps.DistanceMatrixStatus.OK) {
+            $('#result').html(err);
+        }else{
+            var origin = response.originAddresses[0];
+            var destination = response.destinationAddresses[0];
+            if(response.rows[0].elements[0].status === "ZERO_RESULTS"){
+                $('#result').html("Better on an Airplane. No Route or Road inbetween" + origin + "and" + destination);
+            }else{
+                var distance = response.rows[0].elements[0].distance;
+                var duration = response.rows[0].elements[0].duration;
+                var distance_in_kilo = distance.value / 1000; //distance in kilometer
+                var distance_in_mile = distance.value / 1609.34; //distance in mile
+                var duration_text = duration.text;
+                var taxi_fare = 3+((distance.value / 1000)* 50);
+            }
+        }
+    };
+
+    // append the result
+    // function appendResults(distance_in_kilo, distance_in_mile, duration_text, taxi_fare){
+
+    // };
 
     </script>
     <!-- booking function ends -->
