@@ -119,9 +119,39 @@
     };
 
     // send ajax request to save results in db
-    // function sendAjaxRequest(){
+    function sendAjaxRequest(origin, destination, distance_in_kilo, distance_in_mile, duration_text, taxi_fare){
+        var username = $('#username').val();
+        $.ajax({
+            url: 'connect.php',
+            type: 'POST',
+            data:{
+                username,
+                origin,
+                destination,
+                distance_in_kilo,
+                distance_in_mile,
+                duration_text,
+                taxi_fare
+            },
+            success: function (response){
+                console.info(response);
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                console.log(textStatus, errorThrown);
+            }
+        });
+    };
 
-    // };
+    // on submit display route
+    $('#distance_form').submit(function (e){
+        e.preventDefault();
+        var origin = $('#origin').val();
+        var destination = $('#destination').val();
+        // var directionsDisplay = new google.maps.DirectionsRenderer({'draggable': false});
+        // var directionsService = new google.maps.directionsService();
+        displayRoute(origin, destination);
+        calculateDistance(origin, destination);
+    });
 
     </script>
     <!-- booking function ends -->
