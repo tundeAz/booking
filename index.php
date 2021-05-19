@@ -50,7 +50,7 @@
 </body>
     <!-- google autocomplete api starts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyCevBIHfBVyUxMrB1Y7D8iy5FMEcBlmAjY" type="text/javascript"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=" type="text/javascript"></script>
     <!-- google autocomplete api ends-->
 
     <!-- booking function starts -->
@@ -81,7 +81,7 @@
         DistanceMatrixService.getDistanceMatrix({
             origins: [origin],
             destinations: [destination],
-            travelMode: google.maps.TravelMode.DRIVING,
+            // travelMode: google.maps.TravelMode.DRIVING,
             unitSystem: google.maps.unitSystem.IMPERIAL, //miles & feet.
             // unitSystem: google.maps.unitSystem.metric, //kilometer & meters.
             avoidHighways: false,
@@ -149,7 +149,7 @@
         var destination = $('#destination').val();
         // var directionsDisplay = new google.maps.DirectionsRenderer({'draggable': false});
         // var directionsService = new google.maps.directionsService();
-        displayRoute(origin, destination);
+        // displayRoute(origin, destination);
         calculateDistance(origin, destination);
     });
 
