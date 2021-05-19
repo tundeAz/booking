@@ -20,9 +20,10 @@ function save_search_results(){
         values = "('$username','$in_kilo','$in_mile','$origin',
         '$destination','$duration_text','$taxi_price')";
 
-        $sql = "INSERT INTO search_results(username,) VALUES {$values}";
-        $db = mysql_connect() or die ("failed to connect");
-        $result = mysql_query() or die();
+        $sql = "INSERT INTO search_results(username,distance_in_kilo,distance_in_mile,
+        duration_in_text,origin,destination,taxi_price) VALUES {$values}";
+        $db = mysql_connect("localhost","root","","booking") or die ("failed to connect");
+        $result = mysql_query($db,$sql) or die(mysql_error($db));
         header('Content-Type: application/json');
         if ($result){
             echo json_encode(array("status" => "1"));
