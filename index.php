@@ -50,7 +50,7 @@
 </body>
     <!-- google autocomplete api starts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyAFAsCFDvRgPZz-P9XHg-AmeZ1JDDB_9Bc" type="text/javascript"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyCevBIHfBVyUxMrB1Y7D8iy5FMEcBlmAjY" type="text/javascript"></script>
     <!-- google autocomplete api ends-->
 
     <!-- booking function starts -->
