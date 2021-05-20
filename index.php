@@ -6,6 +6,9 @@
 - Date: 15-05-2021
 -
 -->
+<?php
+require_once 'config.php';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -50,7 +53,7 @@
 </body>
     <!-- google autocomplete api starts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=" type="text/javascript"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=your-key" type="text/javascript"></script>
     <!-- google autocomplete api ends-->
 
     <!-- booking function starts -->
@@ -81,8 +84,8 @@
         DistanceMatrixService.getDistanceMatrix({
             origins: [origin],
             destinations: [destination],
-            // travelMode: google.maps.TravelMode.DRIVING,
-            unitSystem: google.maps.unitSystem.IMPERIAL, //miles & feet.
+            travelMode: google.maps.TravelMode.DRIVING,
+            unitSystem: google.maps.UnitSystem.IMPERIAL, //miles & feet.
             // unitSystem: google.maps.unitSystem.metric, //kilometer & meters.
             avoidHighways: false,
             avoidTolls: false
@@ -119,18 +122,18 @@
     };
 
     // send ajax request to save results in db
-    function sendAjaxRequest(origin, destination, distance_in_kilo, distance_in_mile, duration_text, taxi_fare){
+    function sendAjaxRequest(username, origin, destination, distance_in_kilo, distance_in_mile, duration_text, taxi_fare){
         var username = $('#username').val();
         $.ajax({
             url: 'connect.php',
             type: 'POST',
             data:{
                 username,
-                origin,
-                destination,
                 distance_in_kilo,
                 distance_in_mile,
                 duration_text,
+                origin,
+                destination,
                 taxi_fare
             },
             success: function (response){
@@ -151,6 +154,7 @@
         // var directionsService = new google.maps.directionsService();
         // displayRoute(origin, destination);
         calculateDistance(origin, destination);
+        // calculateDistance();
     });
 
     </script>
